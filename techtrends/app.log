@@ -1,0 +1,6 @@
+INFO:werkzeug: * Running on http://127.0.0.1:3111/ (Press CTRL+C to quit)
+INFO:app:The "About Us" page is retrieved!
+INFO:werkzeug:127.0.0.1 - - [04/Sep/2021 11:54:52] "GET /about HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Sep/2021 11:54:58] "GET / HTTP/1.1" 200 -
+INFO:app:The "About Us" page is retrieved!
+INFO:werkzeug:127.0.0.1 - - [04/Sep/2021 11:55:02] "GET /about HTTP/1.1" 200 -
