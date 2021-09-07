@@ -2,6 +2,7 @@ import sqlite3
 
 from flask import Flask, jsonify, json, render_template, request, url_for, redirect, flash
 from werkzeug.exceptions import abort
+from datetime import datetime
 import logging
 # Function to get a database connection.
 # This function connects to database with the name `database.db`
@@ -46,10 +47,12 @@ def index():
 def post(post_id):
     post = get_post(post_id)
     if post is None:
-        app.logger.info("A non-existing article is accessed!")
+        app.logger.info(datetime.now().strftime("%m/%d/%Y, %H:%M:%S") + " " +
+                        'Article with id "{id}" does not exist!'.format(id=post_id))
         return render_template('404.html'), 404
     else:
-        app.logger.info("Article retrieved!")
+        app.logger.info(datetime.now().strftime("%m/%d/%Y, %H:%M:%S") + " " +
+                        'Article "{title}" retrieved!'.format(title=post['title']))
         return render_template('post.html', post=post)
 
 
